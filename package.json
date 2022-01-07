@@ -1,0 +1,23 @@
+{
+  "name": "labitch-bot",
+  "version": "1.0.0",
+  "description": "Add using: https://discord.com/api/oauth2/authorize?client_id=928836570604261407&permissions=3148800&scope=bot%20applications.commands",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-json-modules index.js",
+    "register-commands": "node --experimental-json-modules deploy-commands.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^0.11.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "prettier": "^2.5.1"
+  }
+}
