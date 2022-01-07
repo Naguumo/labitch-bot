@@ -21,7 +21,7 @@ const config = require('./config.json')
 /**
  * Holds playlist
  */
-const songQueue = []
+let songQueue = []
 const audioPlayer = createAudioPlayer({
   behaviors: {
     noSubscriber: NoSubscriberBehavior.Pause,
@@ -141,10 +141,15 @@ const playInteraction = async (interaction) => {
  * Skip to next song
  * @param {CommandInteraction} interaction
  */
-const skipInteraction = async () => {}
+const skipInteraction = async () => {
+  playResource()
+}
 
 /**
  * Clear queue
  * @param {CommandInteraction} interaction
  */
-const stopInteraction = async () => {}
+const stopInteraction = async () => {
+  songQueue = []
+  audioPlayer.stop()
+}
