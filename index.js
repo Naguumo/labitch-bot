@@ -16,6 +16,8 @@ import { CommandInteraction } from 'discord.js'
 const require = createRequire(import.meta.url)
 const config = require('./config.json')
 
+// --------------------------------------------------
+
 /**
  * Holds playlist
  */
@@ -50,6 +52,8 @@ audioPlayer.on('error', (error) => {
   )
 })
 
+// --------------------------------------------------
+
 const myIntents = new Intents()
 myIntents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_VOICE_STATES)
 const client = new Client({ intents: myIntents })
@@ -66,6 +70,8 @@ client.on('interactionCreate', async (interaction) => {
     await playInteraction(interaction)
   } else if (commandName === 'skip') {
     await skipInteraction(interaction)
+  } else if (commandName === 'stop') {
+    await stopInteraction(interaction)
   }
 })
 
@@ -78,6 +84,8 @@ client.once('reconnecting', () => {
 client.once('disconnect', () => {
   console.log('Bot disconnected...')
 })
+
+// --------------------------------------------------
 
 /**
  * Add requested song to queue, join channel of requester if not already in it
