@@ -120,7 +120,6 @@ const playInteraction = async (interaction) => {
   })
 
   if (audioPlayer.state.status !== AudioPlayerStatus.Playing) {
-    console.log('EXTRA')
     playResource()
   }
 
@@ -136,3 +135,8 @@ const playInteraction = async (interaction) => {
  */
 const skipInteraction = async () => {}
 
+/**
+ * Clear queue
+ * @param {CommandInteraction} interaction
+ */
+const stopInteraction = async () => {}

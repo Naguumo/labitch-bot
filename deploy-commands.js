@@ -16,6 +16,8 @@ const commands = [
         .setRequired(true)
         .setDescription('The URL or name of song')
     ),
+  new SlashCommandBuilder().setName('skip').setDescription('Skip to next song'),
+  new SlashCommandBuilder().setName('stop').setDescription('Clear song queue'),
 ].map((cmd) => cmd.toJSON())
 
 const rest = new REST({ version: '9' }).setToken(config.token)
